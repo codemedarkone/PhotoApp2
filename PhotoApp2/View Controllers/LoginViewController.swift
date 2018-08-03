@@ -20,7 +20,7 @@ class LoginViewController: UIViewController {
         loginButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         
-        self.navigationController?.navigationBar.isHidden = true
+     
     }
 
     let loginButton: UIButton = {

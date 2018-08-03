@@ -74,11 +74,22 @@
 			isa = PBXGroup;
 			children = (
 				834BB7562113B77B0072069F /* AppDelegate.swift */,
-				834BB75A2113B77B0072069F /* Main.storyboard */,
+				834BB7A12113F5420072069F /* Helpers */,
+				834BB7A02113F53C0072069F /* Services */,
+				834BB79F2113F5360072069F /* Models */,
+				834BB79E2113F52F0072069F /* Views */,
+				834BB79D2113F51E0072069F /* StoryBoard */,
+				834BB79C2113F4EA0072069F /* View Controllers */,
 				834BB75D2113B77C0072069F /* Assets.xcassets */,
-				834BB75F2113B77C0072069F /* LaunchScreen.storyboard */,
 				834BB7622113B77C0072069F /* Info.plist */,
 				834BB7682113B7A70072069F /* GoogleService-Info.plist */,
+			);
+			path = PhotoApp2;
+			sourceTree = "<group>";
+		};
+		834BB79C2113F4EA0072069F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				834BB76A2113B9A90072069F /* LoginViewController.swift */,
 				834BB76E2113B9D10072069F /* CreateProfileViewController.swift */,
 				834BB7702113B9DD0072069F /* FeedViewController.swift */,
@@ -86,7 +97,44 @@
 				834BB7742113B9EE0072069F /* SettingsViewController.swift */,
 				834BB7762113D94B0072069F /* MainTabBarController.swift */,
 			);
-			path = PhotoApp2;
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		834BB79D2113F51E0072069F /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				834BB75A2113B77B0072069F /* Main.storyboard */,
+				834BB75F2113B77C0072069F /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		834BB79E2113F52F0072069F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		834BB79F2113F5360072069F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		834BB7A02113F53C0072069F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		834BB7A12113F5420072069F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		92B4FC2623539AA8BA8E06CA /* Frameworks */ = {
