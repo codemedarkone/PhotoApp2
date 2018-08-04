@@ -22,8 +22,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.makeKeyAndVisible()
         
-//      window?.rootViewController = UINavigationController(rootViewController: CreateProfileViewController())
-        window?.rootViewController = MainTabBarController()
+      window?.rootViewController = UINavigationController(rootViewController: LoginViewController())
+//        window?.rootViewController = MainTabBarController()
+        
+        //check local storage to see if a user is saved
+        let user = LocalStorageService.loadCurrentUser()
+        
+        if user != nil {
+            // create a tab Bar controller
+            let mainTabBarVC = MainTabBarController()
+            let navController = UINavigationController(rootViewController: mainTabBarVC)
+            
+            //show it
+            window?.rootViewController = navController
+            window?.makeKeyAndVisible()
+        }
         
         return true
     }

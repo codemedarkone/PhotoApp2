@@ -18,6 +18,11 @@
 		834BB7732113B9E60072069F /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834BB7722113B9E60072069F /* CameraViewController.swift */; };
 		834BB7752113B9EE0072069F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834BB7742113B9EE0072069F /* SettingsViewController.swift */; };
 		834BB7772113D94B0072069F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834BB7762113D94B0072069F /* MainTabBarController.swift */; };
+		834BB7A321151AFD0072069F /* PhotoUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834BB7A221151AFD0072069F /* PhotoUser.swift */; };
+		834BB7A521151B260072069F /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834BB7A421151B260072069F /* UserService.swift */; };
+		834BB7A7211538AA0072069F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834BB7A6211538AA0072069F /* Constants.swift */; };
+		834BB7A921153BFF0072069F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834BB7A821153BFF0072069F /* Extensions.swift */; };
+		834BB7AB211545FB0072069F /* LocalStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834BB7AA211545FB0072069F /* LocalStorageService.swift */; };
 		9CB54BE9286C1F255B2A00AF /* Pods_PhotoApp2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E67F1263F93015B08F0949 /* Pods_PhotoApp2.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +42,11 @@
 		834BB7722113B9E60072069F /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		834BB7742113B9EE0072069F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		834BB7762113D94B0072069F /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		834BB7A221151AFD0072069F /* PhotoUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUser.swift; sourceTree = "<group>"; };
+		834BB7A421151B260072069F /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		834BB7A6211538AA0072069F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		834BB7A821153BFF0072069F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		834BB7AA211545FB0072069F /* LocalStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageService.swift; sourceTree = "<group>"; };
 		BB01B507BBEA8A9B54F5E11E /* Pods-PhotoApp2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoApp2.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoApp2/Pods-PhotoApp2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +129,7 @@
 		834BB79F2113F5360072069F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				834BB7A221151AFD0072069F /* PhotoUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -126,6 +137,8 @@
 		834BB7A02113F53C0072069F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				834BB7AA211545FB0072069F /* LocalStorageService.swift */,
+				834BB7A421151B260072069F /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -133,6 +146,8 @@
 		834BB7A12113F5420072069F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				834BB7A6211538AA0072069F /* Constants.swift */,
+				834BB7A821153BFF0072069F /* Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -293,11 +308,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				834BB76B2113B9A90072069F /* LoginViewController.swift in Sources */,
+				834BB7AB211545FB0072069F /* LocalStorageService.swift in Sources */,
 				834BB7732113B9E60072069F /* CameraViewController.swift in Sources */,
+				834BB7A521151B260072069F /* UserService.swift in Sources */,
 				834BB76F2113B9D10072069F /* CreateProfileViewController.swift in Sources */,
+				834BB7A321151AFD0072069F /* PhotoUser.swift in Sources */,
+				834BB7A7211538AA0072069F /* Constants.swift in Sources */,
 				834BB7772113D94B0072069F /* MainTabBarController.swift in Sources */,
 				834BB7712113B9DD0072069F /* FeedViewController.swift in Sources */,
 				834BB7572113B77B0072069F /* AppDelegate.swift in Sources */,
+				834BB7A921153BFF0072069F /* Extensions.swift in Sources */,
 				834BB7752113B9EE0072069F /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

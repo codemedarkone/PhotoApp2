@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SettingsViewController: UIViewController {
 
@@ -16,14 +17,32 @@ class SettingsViewController: UIViewController {
         button.setTitle("SignOut", for: .normal)
         button.backgroundColor = UIColor.blue
         
-//        button.addTarget(self, action: #selector(signOutButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(signOutTapped), for: .touchUpInside)
         
         return button
     }()
     
-    func signOutButton() {
-        print(123)
+    @objc func signOutTapped() {
         
+        //sign out using Firebase auth methods
+        do {
+            try Auth.auth().signOut()
+            
+            //clear local storage
+            LocalStorageService.clearCurrentUser()
+            
+            //change the window to show the login Screen
+            // using constant again
+            let navController = UINavigationController(rootViewController: Constanst.Segue.loginViewController )
+            present(navController, animated: true, completion: nil)
+            
+
+        }
+        catch {
+            //Error signing out
+            print("couldnt Sign out")
+        }
+
     }
     
     

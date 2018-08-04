@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+
 
 class MainTabBarController: UITabBarController {
     
@@ -14,27 +16,32 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let createProfile = CreateProfileViewController()
+    
         
-        let navController = UINavigationController(rootViewController: createProfile)
+        
+        
+    
         
         navigationController?.tabBarItem.selectedImage = #imageLiteral(resourceName: "profile_selected")
         navigationController?.tabBarItem.image = #imageLiteral(resourceName: "profile_unselected")
-
+        
+        view.backgroundColor = .white
         tabBar.barTintColor = .green
+        tabBar.tintColor = .red
         setupTabBar()
     }
     
     
     func setupTabBar() {
         
-        guard title != title else { return }
+        
+        
         let feedController = createTabs(vc: FeedViewController(), selected: nil, unselected: nil, title: "Feed")
 
-        guard title != title else { return }
+        
         let addCameraController = createTabs(vc: CameraViewController(), selected: nil, unselected: nil, title: "Add")
 
-        guard title != title else { return }
+        
         let settingsController = createTabs(vc: SettingsViewController(), selected: nil, unselected: nil, title: "Settings")
         
         viewControllers = [feedController, addCameraController, settingsController]
@@ -49,6 +56,7 @@ class MainTabBarController: UITabBarController {
 
 extension UITabBarController {
     
+    //func to make creating tabBars easier
     func createTabs(vc: UIViewController, selected:UIImage?, unselected: UIImage?, title:String?) -> UINavigationController {
         let viewController = vc
         let navController = UINavigationController(rootViewController: viewController)
