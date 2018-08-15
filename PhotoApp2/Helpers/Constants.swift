@@ -16,6 +16,8 @@ struct Constants {
         static let profileViewController = CreateProfileViewController()
         static let mainTabBarController = MainTabBarController()
         static let loginViewController = LoginViewController()
+        static let feedViewController = FeedViewController()
+
     }
     
     struct LocalStorage {
