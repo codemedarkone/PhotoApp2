@@ -22,8 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.makeKeyAndVisible()
         
-      window?.rootViewController = UINavigationController(rootViewController: LoginViewController())
-//        window?.rootViewController = MainTabBarController()
+//      window?.rootViewController = UINavigationController(rootViewController: LoginViewController())
+        window?.rootViewController = MainTabBarController()
         
         //check local storage to see if a user is saved
         let user = LocalStorageService.loadCurrentUser()

@@ -39,12 +39,14 @@ class MainTabBarController: UITabBarController {
         let feedController = createTabs(vc: FeedViewController(), selected: nil, unselected: nil, title: "Feed")
 
         
-        let addCameraController = createTabs(vc: CameraViewController(), selected: nil, unselected: nil, title: "Add")
+        let cameraController = createTabs(vc: CameraViewController(), selected: nil, unselected: nil, title: "Add")
 
         
         let settingsController = createTabs(vc: SettingsViewController(), selected: nil, unselected: nil, title: "Settings")
         
-        viewControllers = [feedController, addCameraController, settingsController]
+        viewControllers = [feedController,
+                           cameraController,
+                           settingsController]
         
         guard let items = tabBar.items else { return }
         for item in items {

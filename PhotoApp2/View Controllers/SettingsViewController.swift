@@ -33,8 +33,8 @@ class SettingsViewController: UIViewController {
             
             //change the window to show the login Screen
             // using constant again
-            let navController = UINavigationController(rootViewController: Constants.Segue.loginViewController )
-            present(navController, animated: true, completion: nil)
+            
+            present(Constants.Segue.loginViewController, animated: true, completion: nil)
             
 
         }
