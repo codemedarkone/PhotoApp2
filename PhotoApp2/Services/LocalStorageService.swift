@@ -16,8 +16,8 @@ class LocalStorageService {
         //Get standard user defaults
         let defaults = UserDefaults.standard
         
-        defaults.set(user.userId, forKey: Constanst.LocalStorage.storedUserId)
-        defaults.set(user.username, forKey: Constanst.LocalStorage.storedUsername)
+        defaults.set(user.userId, forKey: Constants.LocalStorage.storeUserId)
+        defaults.set(user.username, forKey: Constants.LocalStorage.storedUsername)
     }
     
     static func loadCurrentUser() -> PhotoUser? {
@@ -25,8 +25,8 @@ class LocalStorageService {
         //Get standard user defaults
         let defaults = UserDefaults.standard
         
-        let username = defaults.value(forKey: Constanst.LocalStorage.storedUsername) as? String
-        let userId = defaults.value(forKey: Constanst.LocalStorage.storedUserId) as? String
+        let username = defaults.value(forKey: Constants.LocalStorage.storedUsername) as? String
+        let userId = defaults.value(forKey: Constants.LocalStorage.storeUserId) as? String
         
         // couldnt get user, return nil
         guard username != nil || userId != nil else {
@@ -42,8 +42,8 @@ class LocalStorageService {
         
         let defaults = UserDefaults.standard
         
-        defaults.set(nil, forKey: Constanst.LocalStorage.storedUserId)
-        defaults.set(nil, forKey: Constanst.LocalStorage.storedUsername)
+        defaults.set(nil, forKey: Constants.LocalStorage.storeUserId)
+        defaults.set(nil, forKey: Constants.LocalStorage.storedUsername)
     }
     
 }

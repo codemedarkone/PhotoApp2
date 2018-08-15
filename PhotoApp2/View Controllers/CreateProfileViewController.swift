@@ -68,7 +68,7 @@ class CreateProfileViewController: UIViewController {
                 
                 //Go to the tab bar controller
                 // Used constant for mainTabBarController for less code here.
-                let navController = UINavigationController(rootViewController: Constanst.Segue.mainTabBarController)
+                let navController = UINavigationController(rootViewController: Constants.Segue.mainTabBarController)
                 self.present(navController, animated: true, completion: nil)
                 
 

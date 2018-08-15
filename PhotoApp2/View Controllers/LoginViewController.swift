@@ -92,7 +92,7 @@ extension LoginViewController: FUIAuthDelegate {
                     //no profile, go to profile controller
                     //used the Constant struct for less lines of code.
                     
-                    let navController = UINavigationController(rootViewController: Constanst.Segue.profileViewController)
+                    let navController = UINavigationController(rootViewController: Constants.Segue.profileViewController)
                     self.present(navController, animated: true, completion: nil)
                 }
                 else {
