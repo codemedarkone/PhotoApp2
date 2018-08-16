@@ -12,15 +12,17 @@ import Firebase
 
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     
-    
+
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         
         let index = viewControllers?.index(of: viewController)
         if index == 1 {
 
-            let cameraViewController = CameraViewController()
-            let navController = UINavigationController(rootViewController: cameraViewController)
-            present(navController, animated: true, completion: nil)
+//            let cameraViewController = CameraViewController()
+//            let navController = UINavigationController(rootViewController: cameraViewController)
+//            present(navController, animated: true, completion: nil)
+            
+            showActionSheet()
             return false
         }
         
@@ -45,8 +47,10 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
 
        
         setupTabBar()
+
     }
     
+
     
     func setupTabBar() {
         
@@ -90,3 +94,77 @@ extension UITabBarController {
     
     
 }
+
+extension MainTabBarController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let selectedImage = info[UIImagePickerControllerOriginalImage] {
+            
+            //successfully got the image, now upload
+            
+            //get a reference to the cameraViewController and call the savephoto method
+            
+            let cameraVC = CameraViewController()
+            cameraVC.savePhoto(image: selectedImage as! UIImage)
+            
+        }
+        
+    }
+    
+        func showActionSheet() {
+    
+            // create the action sheet
+            let actionSheet = UIAlertController(title: "Add Photo", message: "Select a source:", preferredStyle: .actionSheet)
+            //create actions
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+    
+                let cameraAction = UIAlertAction(title: "Camera", style: .default) { (action) in
+    
+                    self.showimagePicker(type: .camera)
+                }
+    
+                actionSheet.addAction(cameraAction)
+            }
+    
+            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+    
+                let libraryAction = UIAlertAction(title: "Photo Library", style: .default) { (action) in
+    
+                    self.showimagePicker(type: .photoLibrary)
+                }
+    
+                actionSheet.addAction(libraryAction)
+            }
+    
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+    
+                self.dismiss(animated: true, completion: nil)
+            }
+    
+            actionSheet.addAction(cancelAction)
+    
+    
+            //present actions
+            present(actionSheet, animated: true, completion: nil)
+        }
+    
+        func showimagePicker(type: UIImagePickerControllerSourceType){
+    
+            //create Image picker
+            let imagePicker = UIImagePickerController()
+            imagePicker.sourceType = type
+            imagePicker.delegate = self
+    
+            //present it
+            present(imagePicker, animated: true, completion: nil)
+        }
+    
+    
+}
+

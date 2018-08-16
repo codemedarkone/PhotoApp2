@@ -15,11 +15,12 @@ class CameraViewController: UIViewController {
 
         view.backgroundColor = .white
         
-        
     }
-
     
+        func savePhoto(image:UIImage) {
     
-  
-
+            PhotoService.savePhoto(image: image)
+        }
+    
 }
+

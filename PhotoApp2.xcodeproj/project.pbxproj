@@ -23,6 +23,8 @@
 		834BB7AB211545FB0072069F /* LocalStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834BB7AA211545FB0072069F /* LocalStorageService.swift */; };
 		83520E0721249FB700D815DE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83520E0621249FB700D815DE /* Constants.swift */; };
 		83520E092124A06E00D815DE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83520E082124A06E00D815DE /* Extensions.swift */; };
+		83520E0E2124D8B800D815DE /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83520E0D2124D8B800D815DE /* Photos.swift */; };
+		83520E102124D93200D815DE /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83520E0F2124D93200D815DE /* PhotoService.swift */; };
 		9CB54BE9286C1F255B2A00AF /* Pods_PhotoApp2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E67F1263F93015B08F0949 /* Pods_PhotoApp2.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,8 @@
 		834BB7AA211545FB0072069F /* LocalStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageService.swift; sourceTree = "<group>"; };
 		83520E0621249FB700D815DE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		83520E082124A06E00D815DE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		83520E0D2124D8B800D815DE /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
+		83520E0F2124D93200D815DE /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
 		BB01B507BBEA8A9B54F5E11E /* Pods-PhotoApp2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoApp2.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoApp2/Pods-PhotoApp2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				834BB7A221151AFD0072069F /* PhotoUser.swift */,
+				83520E0D2124D8B800D815DE /* Photos.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 			children = (
 				834BB7AA211545FB0072069F /* LocalStorageService.swift */,
 				834BB7A421151B260072069F /* UserService.swift */,
+				83520E0F2124D93200D815DE /* PhotoService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -321,7 +327,9 @@
 				83520E092124A06E00D815DE /* Extensions.swift in Sources */,
 				834BB7732113B9E60072069F /* CameraViewController.swift in Sources */,
 				834BB7A521151B260072069F /* UserService.swift in Sources */,
+				83520E102124D93200D815DE /* PhotoService.swift in Sources */,
 				834BB76F2113B9D10072069F /* CreateProfileViewController.swift in Sources */,
+				83520E0E2124D8B800D815DE /* Photos.swift in Sources */,
 				834BB7A321151AFD0072069F /* PhotoUser.swift in Sources */,
 				834BB7772113D94B0072069F /* MainTabBarController.swift in Sources */,
 				834BB7712113B9DD0072069F /* FeedViewController.swift in Sources */,
