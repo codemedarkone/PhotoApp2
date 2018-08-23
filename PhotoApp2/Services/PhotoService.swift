@@ -13,6 +13,38 @@ import FirebaseAuth
 
 class PhotoService {
     
+    static func getPhotos(completion: @escaping ([Photo]) -> Void) -> Void{
+        
+        //Get a reference to the database
+        let dbRef = Database.database().reference()
+        
+        //Make the db call
+        dbRef.child("photos").observe(.value) { (snapshot) in
+            
+            var retrievedPhotos = [Photo]()
+            
+            //get a list of snapshots
+            let snapshots = snapshot.children.allObjects as? [DataSnapshot]
+            
+            if let snapshots = snapshots {
+                
+                for snap in snapshots {
+                    
+                    //try to createa  photo from a snapshot
+                    let p = Photo(snapshot: snap)
+                    
+                    // If successful, add it to our array
+                    if p != nil {
+                        retrievedPhotos.insert(p!, at: 0)
+                    }
+                }
+            }
+            
+            //after parsing the snapshots, call the completion closure
+            completion(retrievedPhotos)
+        }
+    }
+    
     static func savePhoto(image: UIImage) {
         
         //get data represetnation of the image
@@ -36,7 +68,7 @@ class PhotoService {
                 print("An error occured uploading image")
             }
             else {
-                //upload was successfully, now create a database entry
+                //upload was successful, now create a database entry
                 self.createPhotoDatabaseEntry(ref: ref)
             }
         }

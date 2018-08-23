@@ -107,7 +107,6 @@ extension MainTabBarController: UIImagePickerControllerDelegate, UINavigationCon
         if let selectedImage = info[UIImagePickerControllerOriginalImage] {
             
             //successfully got the image, now upload
-            
             //get a reference to the cameraViewController and call the savephoto method
             
             let cameraVC = CameraViewController()
