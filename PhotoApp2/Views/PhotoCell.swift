@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PhotoCell: UITableViewCell {
     
@@ -45,7 +46,7 @@ class PhotoCell: UITableViewCell {
         
          usernameLabel.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 20, paddingBottom: 10, paddingRight: 0, width: 0, height: 0)
         
-        photoImage.anchor(top: usernameLabel.bottomAnchor, left: leftAnchor, bottom: dateLabel.topAnchor, right: rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 20, paddingRight: 20, width: 0, height: 0)
+        photoImage.anchor(top: usernameLabel.bottomAnchor, left: leftAnchor, bottom: dateLabel.topAnchor, right: rightAnchor, paddingTop: 8, paddingLeft: 20, paddingBottom: 8, paddingRight: 20, width: 0, height: 0)
         
         dateLabel.anchor(top: nil, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 10, paddingLeft: 20, paddingBottom: 20, paddingRight: 0, width: 0, height: 0)
     }
@@ -59,55 +60,22 @@ class PhotoCell: UITableViewCell {
         usernameLabel.text = photo.byUsername
         dateLabel.text = photo.date
         
-        // Download photo and set the imageView
-        
-//        guard let url = URL(string: photo.url!) else { return }
-//
-//        URLSession.shared.dataTask(with: url) { (data, response, err) in
-//
-//            if let err = err {
-//                print("failed to get url data:", err)
-//                return
-//            }
-//
-//            guard let imageData = data else { return }
-//            let photoImage = UIImage(data: data!)
-//
-//            DispatchQueue.main.async {
-//                self.photoImage.image = photoImage
-//            }
-//
-//        }
-        
-        let stringUrl = photo.url
-        
-        if stringUrl != stringUrl {
-            print("no url for image")
-            return
-        }
-        
-        let url = URL(string: stringUrl!)
-        
-        if url != url {
-            print("There was no image url")
-            return
-        }
-
-        URLSession.shared.dataTask(with: url!) { (data, response, err) in
+        if let urlString = photo.url {
             
-            if let err = err {
-                print("failed to fetch image:", err)
+            let url = URL(string: urlString)
+            
+            guard url != nil else {
+                print("couldnt return url object")
+                return
             }
-            
-            guard let imageData = data else { return }
-            
-            let photoImage = UIImage(data: imageData)
-            
-            DispatchQueue.main.async {
+            //loads images and caches them for us
+            photoImage.sd_setImage(with: url) { (image, err, cacheType, url) in
                 
-                self.photoImage.image = photoImage
+                self.photoImage.image = image
             }
-        }.resume()
+        }
         
     }
+        
+        
 }
